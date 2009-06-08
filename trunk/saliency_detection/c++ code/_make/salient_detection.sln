@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "salient_detection", "salient_detection.vcproj", "{9B82F2C4-748B-41A9-A39B-CC2769690063}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "background_extraction", "..\background_extraction\background_extraction.vcproj", "{B8B63327-B5E8-4913-821B-CA0453C613CC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
@@ -50,10 +48,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9B82F2C4-748B-41A9-A39B-CC2769690063}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9B82F2C4-748B-41A9-A39B-CC2769690063}.Debug|Win32.Build.0 = Debug|Win32
-		{9B82F2C4-748B-41A9-A39B-CC2769690063}.Release|Win32.ActiveCfg = Release|Win32
-		{9B82F2C4-748B-41A9-A39B-CC2769690063}.Release|Win32.Build.0 = Release|Win32
 		{B8B63327-B5E8-4913-821B-CA0453C613CC}.Debug|Win32.ActiveCfg = Debug|Win32
 		{B8B63327-B5E8-4913-821B-CA0453C613CC}.Debug|Win32.Build.0 = Debug|Win32
 		{B8B63327-B5E8-4913-821B-CA0453C613CC}.Release|Win32.ActiveCfg = Release|Win32

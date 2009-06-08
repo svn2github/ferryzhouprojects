@@ -154,7 +154,7 @@ void main(int argc, char* argv[]) {
 		smoothTemporally();
 
 		sprintf_s(outputPath, PATH_SIZE, outputPathRegex, i);
-		cvSaveImage(outputDirectory, dst);
+		cvSaveImage(outputPath, dst);
 
 		if (realEndIndex > 0 && i == realEndIndex) break;
 
