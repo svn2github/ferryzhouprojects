@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="using_fftw"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="..\third_party\fftw"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="libfftw3-3.lib"
+		AdditionalLibraryDirectories="..\third_party\fftw"
+	/>
+</VisualStudioPropertySheet>

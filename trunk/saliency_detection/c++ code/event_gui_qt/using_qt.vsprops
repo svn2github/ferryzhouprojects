@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="using_qt"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(QT_DIR)\include;$(QT_DIR)\include\QtCore;$(QT_DIR)\include\QtGui;"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="gdi32.lib user32.lib qtmaind.lib QtCored4.lib QtGuid4.lib"
+		AdditionalLibraryDirectories="$(QT_DIR)\lib"
+	/>
+	<UserMacro
+		Name="QT_DIR"
+		Value="H:\Qt\4.4.3"
+	/>
+</VisualStudioPropertySheet>

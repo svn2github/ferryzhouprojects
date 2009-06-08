@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="using_fvision"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(FVISION)\src"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="fvisiond.lib"
+		AdditionalLibraryDirectories="$(FVISION)\lib"
+	/>
+	<UserMacro
+		Name="FVISION"
+		Value="H:\zj\google code\fvision_modules\_package\src_distrib\src_0.1.2"
+	/>
+</VisualStudioPropertySheet>
