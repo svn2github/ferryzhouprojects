@@ -23,6 +23,8 @@ public:
 	BackgroundAnalizer(size_t blockSize = 8);
 	~BackgroundAnalizer(void);
 public:
+	void setUpdateWeight(double weight);
+
 	void addFrame(const IplImage* frame);
 	void getBackgroundImage(IplImage* frame);
 	size_t getGridSize() const ;
@@ -74,6 +76,8 @@ private:
 	std::vector<ImageBlockFeature*> features;
 
 	Feature* backgroundFeatures;
+
+	double updateWeight;
 
 	//buffer for testing image
 	double* distances;

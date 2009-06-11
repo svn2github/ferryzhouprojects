@@ -142,6 +142,8 @@ void updateMainWindow() {
 	if (src == NULL) {
 		cout<<"can not load image: "<<originalImagePath<<" !"<<endl;
 		return;
+	} else {
+		cout<<"loaded image: "<<originalImagePath<<endl;
 	}
 
 	showImage("original", src);
@@ -168,16 +170,23 @@ void updateMainWindow() {
 	cvReleaseImage(&src);
 }
 
+void onUpdateBarIndex() {
+	curFrameIndex = frameIndexFromBarIndex(barIndex);
+	updateSaliencyBarWindow();
+	updateMainWindow();
+}
+
 //set curIndex
 //update bar image
 //update main window
 void onSaliencyBarMouse(int event, int x, int y, int flags, void* param) {
 	if (event == CV_EVENT_LBUTTONUP) {
 		barIndex = x;
-		curFrameIndex = frameIndexFromBarIndex(barIndex);
-		updateSaliencyBarWindow();
-		updateMainWindow();
-	}	
+		onUpdateBarIndex();
+	} else if (event == CV_EVENT_RBUTTONDOWN) {
+		barIndex++;
+		onUpdateBarIndex();
+	}
 }
 
 void loadMotionEvents() {

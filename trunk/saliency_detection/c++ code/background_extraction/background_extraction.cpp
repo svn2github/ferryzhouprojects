@@ -13,7 +13,7 @@ static char usage[] =
 "\n background_extraction version 0.1 \n\
 \n\
 usage: %s -i <input_path_regex> -E <end_index> -o <output_path> -m <method> [options] \n\
-<method> = \"<block_size> <threshold> <num_of_training_frames>\"\n\
+<method> = \"<block_size> <threshold> <num_of_training_frames> <update_weight>\"\n\
 \n\
 reads an image sequence\n\
 output several image sequences: \n\
@@ -50,7 +50,7 @@ int interval = 1;
 //-E
 int endIndex = 100000;
 //-n
-int indexStringSize = 4;
+int indexStringSize = 5;
 //-m
 char* methodString = NULL;
 //-d
@@ -107,12 +107,17 @@ void setParameters() {
 size_t blockSize = 4;
 double threshold = 20.0;
 size_t trainingCount = 200;
+double updateWeight = 0.05;
 
 void parseMethod(const char* methodString) {
 	istringstream iss(methodString);
-	iss>>blockSize>>threshold>>trainingCount;	
+	iss>>blockSize>>threshold>>trainingCount>>updateWeight;	
 	if (blockSize < 0) {
 		cout<<"the blockSize should be positive number!"<<endl;
+		exit(1);
+	}
+	if (updateWeight < 0 || updateWeight > 1) {
+		cout<<"update weight should be in [0, 1]!"<<endl;
 		exit(1);
 	}
 }
@@ -125,16 +130,17 @@ void main(int argc, char* argv[]) {
 	parseMethod(methodString);
 
 	BackgroundAnalizer analizer(blockSize);
+	analizer.setUpdateWeight(updateWeight);
 	ImageBlockCluster::threshold = threshold;
 
 	const int PATH_SIZE = 300;
 	char inputPath[PATH_SIZE];
 	char outputPath[PATH_SIZE];
 
-	char indexStringRegex[] = "%04d";
-	if (indexStringSize != 4) indexStringRegex[2] = indexStringSize + '0';
+	char indexStringRegex[] = "%05d";
+	if (indexStringSize != 5) indexStringRegex[2] = indexStringSize + '0';
 
-	const char* rawDistanceDirName = "raw_distances";
+	const char* rawDistanceDirName = "raw_saliency";
 	const char* foregroundBlockDirName = "foreground_blocks";
 
 	string rawDistanceDir = string(outputDirectory) + rawDistanceDirName;

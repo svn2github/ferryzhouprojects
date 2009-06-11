@@ -12,6 +12,8 @@ public:
 
 public:
 	void setValues(const double* values);
+	//v' = v * (1 - weight) + nv * weight
+	void weightedUpdateWithNewFeature(const ImageBlockFeature* nfeature, double weight);
 
 public:
 	double* values;

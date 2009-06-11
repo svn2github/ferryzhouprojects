@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "background_extraction", "..\background_extraction\background_extraction.vcproj", "{B8B63327-B5E8-4913-821B-CA0453C613CC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
+		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "optical_flow_analysis", "..\optical_flow_analysis\optical_flow_analysis.vcproj", "{7C054509-15BC-4255-9BE7-575C898BC60E}"
@@ -24,8 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stationary_foreground_detec
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "event_gui_opencv", "..\event_gui_opencv\event_gui_opencv.vcproj", "{559C0B20-ABBB-4E8A-BB67-7DD98DC814C8}"
 	ProjectSection(ProjectDependencies) = postProject
-		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
 		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
+		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "motion_event_detection", "..\motion_event_detection\motion_event_detection.vcproj", "{01DD9BCB-0A61-49B1-BE04-54C8846CAA0B}"

@@ -31,3 +31,9 @@ Feature* ImageBlockFeature::clone() const {
 void ImageBlockFeature::setValues(const double* values) {
 	memcpy(this->values, values, sizeof(double) * length);
 }
+
+void ImageBlockFeature::weightedUpdateWithNewFeature(const ImageBlockFeature* nfeature, double weight) {
+	for (size_t i = 0; i < length; i++) {
+		values[i] = (1 - weight) * values[i] + weight * nfeature->values[i];
+	}
+}

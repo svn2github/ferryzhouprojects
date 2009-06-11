@@ -52,6 +52,8 @@ BackgroundAnalizer::BackgroundAnalizer(size_t blockSize) {
 	trainingStarted = false;
 	testingStarted = false;
 
+	updateWeight = 0.05;
+
 	distances = NULL;
 	rawDistanceImage = NULL;
 	foregroundBlockImage = NULL;
@@ -171,6 +173,10 @@ void BackgroundAnalizer::calculateBlockDistanceWithBackgroundFeatures(const IplI
 			ImageBlockFeature* feature = features[index];
 			ImageBlockFeature* srcFeature = featureExtractor->extract(src, xCoords[j], yCoords[i], index);
 			distances[index] = feature->computeDistance(srcFeature);
+			//update features
+			if (distances[index] < ImageBlockCluster::threshold / 2) {
+				feature->weightedUpdateWithNewFeature(srcFeature, updateWeight);
+			}
 		}
 	}
 }
@@ -190,3 +196,7 @@ void BackgroundAnalizer::fillBlock(IplImage* frame, size_t xi, size_t yi, const 
 	cvRectangle(frame, cvPoint(xCoords[xi], yCoords[yi]), cvPoint(xCoords[xi] + blockSize - 1, yCoords[yi] + blockSize - 1), color, CV_FILLED);
 }
 
+void BackgroundAnalizer::setUpdateWeight(double weight) {
+	assert (weight >= 0 && weight <= 1);
+	this->updateWeight = weight;
+}
