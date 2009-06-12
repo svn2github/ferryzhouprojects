@@ -90,6 +90,7 @@ IplImage* VideoTemporalSaliencyAnalizerImpl::loadOriginalFrame(int index) {
 	if (originalImage == NULL) return NULL;
 	IplImage* resizedImage = cvCreateImage(processingImageSize, 8, 1);
 	cvResize(originalImage, resizedImage);
+	cvSmooth(resizedImage, resizedImage);
 	cvReleaseImage(&originalImage);
 	return resizedImage;
 }
