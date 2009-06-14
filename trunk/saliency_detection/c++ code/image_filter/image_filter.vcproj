@@ -144,6 +144,14 @@
 	</References>
 	<Files>
 		<File
+			RelativePath=".\BinarizeImageFilter.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\BinarizeImageFilter.h"
+			>
+		</File>
+		<File
 			RelativePath=".\image_filter.h"
 			>
 		</File>

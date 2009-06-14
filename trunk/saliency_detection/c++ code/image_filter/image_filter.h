@@ -6,5 +6,6 @@
 #include "SmoothImageFilter.h"
 #include "SmartImageFilter.h"
 #include "SequenceImageFilter.h"
+#include "BinarizeImageFilter.h"
 
 #endif // IMAGE_FILTER_HEADER_H_
