@@ -177,6 +177,14 @@
 				RelativePath=".\impl\PathRegexImageOutputHandler.h"
 				>
 			</File>
+			<File
+				RelativePath=".\impl\WindowImageOutputHandler.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\impl\WindowImageOutputHandler.h"
+				>
+			</File>
 		</Filter>
 		<File
 			RelativePath=".\FilteredImageInputHandler.cpp"
@@ -192,6 +200,18 @@
 		</File>
 		<File
 			RelativePath=".\FilteredImageOutputHandler.h"
+			>
+		</File>
+		<File
+			RelativePath=".\image_io.h"
+			>
+		</File>
+		<File
+			RelativePath=".\image_io_utils.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\image_io_utils.h"
 			>
 		</File>
 		<File
@@ -224,6 +244,22 @@
 		</File>
 		<File
 			RelativePath=".\ImageOutputHandler.h"
+			>
+		</File>
+		<File
+			RelativePath=".\ImageOutputHandlerFactory.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\ImageOutputHandlerFactory.h"
+			>
+		</File>
+		<File
+			RelativePath=".\SequenceImageOutputHandler.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\SequenceImageOutputHandler.h"
 			>
 		</File>
 	</Files>
