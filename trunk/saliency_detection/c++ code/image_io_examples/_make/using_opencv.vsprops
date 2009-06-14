@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="using_opencv"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(OPENCV)cv/include;$(OPENCV)cxcore/include;$(OPENCV)otherlibs/highgui"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="cv.lib cxcore.lib highgui.lib"
+		AdditionalLibraryDirectories="$(OPENCV)lib"
+	/>
+	<UserMacro
+		Name="OPENCV"
+		Value="$(SolutionDir)..\..\third_party\opencv\"
+	/>
+</VisualStudioPropertySheet>
