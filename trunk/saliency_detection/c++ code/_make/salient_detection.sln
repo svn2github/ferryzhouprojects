@@ -43,6 +43,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phase_saliency_detection", 
 		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "image_io", "..\image_io\image_io.vcproj", "{B7C2C500-781D-4B33-B484-B672321F5EDC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foreground_extraction", "..\foreground_extraction\foreground_extraction.vcproj", "{940D8F05-77AE-40BC-B43E-5F787AAB08A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C2C500-781D-4B33-B484-B672321F5EDC} = {B7C2C500-781D-4B33-B484-B672321F5EDC}
+		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
+		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
+		{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31} = {6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "image_filter", "..\image_filter\image_filter.vcproj", "{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -93,6 +105,18 @@ Global
 		{5A1310CB-25DA-4E4E-A2DD-5BF64A5AAA6B}.Debug|Win32.Build.0 = Debug|Win32
 		{5A1310CB-25DA-4E4E-A2DD-5BF64A5AAA6B}.Release|Win32.ActiveCfg = Release|Win32
 		{5A1310CB-25DA-4E4E-A2DD-5BF64A5AAA6B}.Release|Win32.Build.0 = Release|Win32
+		{B7C2C500-781D-4B33-B484-B672321F5EDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B7C2C500-781D-4B33-B484-B672321F5EDC}.Debug|Win32.Build.0 = Debug|Win32
+		{B7C2C500-781D-4B33-B484-B672321F5EDC}.Release|Win32.ActiveCfg = Release|Win32
+		{B7C2C500-781D-4B33-B484-B672321F5EDC}.Release|Win32.Build.0 = Release|Win32
+		{940D8F05-77AE-40BC-B43E-5F787AAB08A4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{940D8F05-77AE-40BC-B43E-5F787AAB08A4}.Debug|Win32.Build.0 = Debug|Win32
+		{940D8F05-77AE-40BC-B43E-5F787AAB08A4}.Release|Win32.ActiveCfg = Release|Win32
+		{940D8F05-77AE-40BC-B43E-5F787AAB08A4}.Release|Win32.Build.0 = Release|Win32
+		{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}.Debug|Win32.Build.0 = Debug|Win32
+		{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}.Release|Win32.ActiveCfg = Release|Win32
+		{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
