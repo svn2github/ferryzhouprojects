@@ -11,4 +11,6 @@ public:
 public:
 	void setImageInputHandler(ImageInputHandler* imageInputHandler);
 
+private:
+	
 };

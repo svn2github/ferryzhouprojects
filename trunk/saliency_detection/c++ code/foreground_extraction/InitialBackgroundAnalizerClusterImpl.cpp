@@ -83,7 +83,7 @@ private:
 	PixelFeature meanFeature;
 };
 
-double PixelCluster::distanceThreshold = 40;
+double PixelCluster::distanceThreshold = 30;
 
 InitialBackgroundAnalizerClusterImpl::InitialBackgroundAnalizerClusterImpl(void) {
 	backgroundImage = NULL;

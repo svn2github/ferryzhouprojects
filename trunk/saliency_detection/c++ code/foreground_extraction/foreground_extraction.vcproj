@@ -20,8 +20,8 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops;..\common\using_common.vsprops;..\image_io\using_image_io.vsprops"
-			CharacterSet="1"
+			InheritedPropertySheets="..\using_opencv.vsprops;..\common\using_common.vsprops;..\image_io\using_image_io.vsprops;..\image_filter\using_image_filter.vsprops;..\using_fvision.vsprops;..\using_xgetopt.vsprops"
+			CharacterSet="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -96,7 +96,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops;..\common\using_common.vsprops;..\image_io\using_image_io.vsprops"
+			InheritedPropertySheets="..\using_opencv.vsprops;..\common\using_common.vsprops;..\image_io\using_image_io.vsprops;..\image_filter\using_image_filter.vsprops;..\using_fvision.vsprops;..\using_xgetopt.vsprops"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -172,15 +172,15 @@
 	</References>
 	<Files>
 		<File
+			RelativePath=".\BackgroundImageManager.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\BackgroundImageManager.h"
+			>
+		</File>
+		<File
 			RelativePath=".\foreground_extraction.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\ForegroundSaliencyAnalizer.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\ForegroundSaliencyAnalizer.h"
 			>
 		</File>
 		<File
@@ -189,6 +189,14 @@
 		</File>
 		<File
 			RelativePath=".\ForegroundSaliencyAnalizerImpl.h"
+			>
+		</File>
+		<File
+			RelativePath=".\ForegroundSaliencyClassifier.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\ForegroundSaliencyClassifier.h"
 			>
 		</File>
 		<File
@@ -205,6 +213,14 @@
 		</File>
 		<File
 			RelativePath=".\InitialBackgroundAnalizerClusterImpl.h"
+			>
+		</File>
+		<File
+			RelativePath=".\PixelDifferenceCalculator.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\PixelDifferenceCalculator.h"
 			>
 		</File>
 		<File
