@@ -11,7 +11,7 @@ using namespace image_io;
 
 class WindowImageOutputHandler : public ImageOutputHandler {
 public:
-	WindowImageOutputHandler(const std::string& windowName);
+	WindowImageOutputHandler(const std::string& windowName, int waitTime = 30);
 	~WindowImageOutputHandler(void);
 
 public:
@@ -19,6 +19,7 @@ public:
 
 private:
 	std::string windowName;
+	int waitTime;
 };
 
 }}

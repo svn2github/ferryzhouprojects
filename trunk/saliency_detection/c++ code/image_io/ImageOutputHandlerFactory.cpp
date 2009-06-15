@@ -17,7 +17,7 @@ ImageOutputHandler* ImageOutputHandlerFactory::createPathRegexImageOutputHandler
 	return new impl::PathRegexImageOutputHandler(pathRegex, startIndex, interval);
 }
 
-ImageOutputHandler* ImageOutputHandlerFactory::createWindowImageOutputHandler(const char* windowName) {
-	return new impl::WindowImageOutputHandler(windowName);
+ImageOutputHandler* ImageOutputHandlerFactory::createWindowImageOutputHandler(const char* windowName, int waitTime) {
+	return new impl::WindowImageOutputHandler(windowName, waitTime);
 }
 }

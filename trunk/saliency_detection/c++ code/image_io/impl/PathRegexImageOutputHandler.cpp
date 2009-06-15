@@ -1,8 +1,10 @@
 #include "PathRegexImageOutputHandler.h"
 
 #include <highgui.h>
+#include <iostream>
 
 using namespace image_io;
+using namespace std;
 
 namespace image_io { namespace impl {
 
@@ -25,6 +27,10 @@ void PathRegexImageOutputHandler::write(const IplImage* im) throw(ImageIoExcepti
 
 	sprintf_s(pathBuf, pathRegex.size() + 10, pathRegex.c_str(), curIndex);
 	cvSaveImage(pathBuf, im);
+
+	curIndex += interval;
+
+	if (curIndex % 10 == 0) cout<<"output "<<curIndex<<"..........."<<endl;
 
 	if (cvGetErrStatus() < 0) {
 		throw new ImageIoException(pathBuf);

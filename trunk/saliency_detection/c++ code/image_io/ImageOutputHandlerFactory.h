@@ -12,7 +12,7 @@ public:
 
 public:
 	ImageOutputHandler* createPathRegexImageOutputHandler(const char* pathRegex, int startIndex, int interval = 1);
-	ImageOutputHandler* createWindowImageOutputHandler(const char* windowName);
+	ImageOutputHandler* createWindowImageOutputHandler(const char* windowName, int waitTime = 30);
 	//ImageOutputHandler* createAviImageInputHandler(const char* aviPath);
 };
 
