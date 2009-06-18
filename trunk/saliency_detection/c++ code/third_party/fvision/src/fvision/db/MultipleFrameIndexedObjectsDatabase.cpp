@@ -1,0 +1,2 @@
+#include "MultipleFrameIndexedObjectsDatabase.h"
+

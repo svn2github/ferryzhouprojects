@@ -1,0 +1,2 @@
+#include "IndexedObjectsDatabaseMapImpl.h"
+
