@@ -33,6 +33,7 @@ void PathRegexImageOutputHandler::write(const IplImage* im) throw(ImageIoExcepti
 	if (curIndex % 10 == 0) cout<<"output "<<curIndex<<"..........."<<endl;
 
 	if (cvGetErrStatus() < 0) {
+		cout<<"error! "<<pathBuf<<endl;
 		throw new ImageIoException(pathBuf);
 	}
 }

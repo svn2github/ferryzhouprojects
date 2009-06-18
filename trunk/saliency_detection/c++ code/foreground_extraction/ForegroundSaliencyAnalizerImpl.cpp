@@ -71,13 +71,13 @@ void ForegroundSaliencyAnalizerImpl::run() {
 	}
 
 	//classify rest images
-	image_io::ImageOutputHandler* originalImageOutputHandler = image_io::ImageOutputHandlerFactory().createWindowImageOutputHandler("original", 1);
+	//image_io::ImageOutputHandler* originalImageOutputHandler = image_io::ImageOutputHandlerFactory().createWindowImageOutputHandler("original", 1);
 	while ((originalImage = imageInputHandler->read()) != NULL) {
+		//originalImageOutputHandler->write(originalImage);
 		backgroundImageManager->computeForegroundDifference(originalImage, differenceImage);
 		classifier->classify(differenceImage, binarySaliencyImage);
 		backgroundImageManager->updateBackground(originalImage, binarySaliencyImage);
 		imageOutputHandler->write(binarySaliencyImage);
-		originalImageOutputHandler->write(originalImage);
 	}
 
 	cvReleaseImage(&differenceImage);

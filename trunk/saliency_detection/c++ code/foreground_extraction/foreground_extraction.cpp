@@ -76,7 +76,7 @@ void processCommandLine(int argc, char* argv[]) {
 				cerr<<"Ignoring unrecognized option "<<argv[optind-1]<<endl;
 		}
 	}
-	if (optind != argc) {
+	if (optind != argc || argc == 1) {
 		printf(usage, argv[0]);
 		exit(1);
 	}
@@ -95,11 +95,12 @@ void checkInput() {
 void setParameters() {
 	//inputPathRegex = "H:\\zj\\data\\surveillance\\caviar1\\Meet_Crowd%03d.jpg";
 	//outputDirectory = "H:\\zj\\data\\surveillance\\results\\caviar1\\foreground2\\";
-	inputPathRegex = "H:\\zj\\data\\surveillance\\pets2001\\%04d.jpg";
-	outputDirectory = "H:\\zj\\data\\surveillance\\results\\pets2001\\foreground\\";
-	methodString = "8 30.0 50.0 50 0.05";
+	inputPathRegex = "H:\\zj\\data\\surveillance\\samsung2\\im_%05d.jpg";
+	outputDirectory = "H:\\zj\\data\\surveillance\\results\\samsung2\\";
+	methodString = "4 30.0 50.0 50 0.05";
 	indexStringSize = 5;
-	startIndex = 1;
+	//startIndex = 1;
+	//drawImage = true;
 }
 
 double divisionFactor = 4;
@@ -110,7 +111,12 @@ double updateWeight = 0.05;
 
 void parseMethod(const char* methodString) {
 	istringstream iss(methodString);
-	iss>>divisionFactor>>lowerThreshold>>higherThreshold>>trainingCount>>updateWeight;	
+	iss>>divisionFactor>>lowerThreshold>>higherThreshold>>trainingCount>>updateWeight;
+	cout<<"division_factor: "<<divisionFactor<<endl;
+	cout<<"lower_threshold: "<<lowerThreshold<<endl;
+	cout<<"higher_threshold: "<<higherThreshold<<endl;
+	cout<<"trainning_frame_count: "<<trainingCount<<endl;
+	cout<<"updating_weight: "<<updateWeight<<endl;
 	if (divisionFactor < 0) {
 		cout<<"the divisionFactor should be positive number!"<<endl;
 		exit(1);
@@ -133,8 +139,8 @@ ImageOutputHandler* configOutputHandler(const char* outputPathRegex);
 
 void main(int argc, char* argv[]) {
 
-	//processCommandLine(argc, argv);
-	setParameters();
+	processCommandLine(argc, argv);
+	//setParameters();
 	checkInput();
 	parseMethod(methodString);
 
@@ -142,10 +148,6 @@ void main(int argc, char* argv[]) {
 	analizer->setBackgroundUpdatingRatio(updateWeight);
 	analizer->setThresholds(higherThreshold, lowerThreshold);
 	analizer->setTrainingFrameCount(trainingCount);
-
-	const int PATH_SIZE = 300;
-	char inputPath[PATH_SIZE];
-	char outputPath[PATH_SIZE];
 
 	char indexStringRegex[] = "%05d";
 	if (indexStringSize != 5) indexStringRegex[2] = indexStringSize + '0';
@@ -157,7 +159,7 @@ void main(int argc, char* argv[]) {
 	string binarySaliencyDir = string(outputDirectory) + binarySaliencyDirName;
 
 	string rawDistancePathRegex = rawDistanceDir + "/im_" + indexStringRegex + ".png";
-	string binarySaliencyPathRegex = binarySaliencyDir + "/im_" + indexStringRegex + ".jpg";
+	string binarySaliencyPathRegex = binarySaliencyDir + "/im_" + indexStringRegex + ".png";
 
 	fvision::JFile jfile;
 	if (!jfile.isFileExists(rawDistanceDir.c_str())) {
@@ -173,7 +175,11 @@ void main(int argc, char* argv[]) {
 	analizer->setImageInputHandler(inputHandler);
 	analizer->setImageOutputHandler(outputHandler);
 
-	analizer->run();
+	try {
+		analizer->run();
+	} catch (const image_io::ImageIoException& e) {
+		cout<<e.what()<<endl;
+	}
 
 	cvWaitKey(0);
 }
@@ -190,12 +196,14 @@ ImageInputHandler* configInputHandler() {
 
 ImageOutputHandler* configOutputHandler(const char* outputPathRegex) {
 	ImageOutputHandler* saveOutputHandler = ImageOutputHandlerFactory().createPathRegexImageOutputHandler(outputPathRegex, startIndex, interval);
-	ImageOutputHandler* windowOutputHandler = new FilteredImageOutputHandler(
-		ImageOutputHandlerFactory().createWindowImageOutputHandler("binary_saliency", 10),
-		ResizeImageFilter::createWithNewRatio(divisionFactor)
-		);
 	SequenceImageOutputHandler* outputHandler = new SequenceImageOutputHandler();
 	outputHandler->addImageOutputHandler(saveOutputHandler);
-	outputHandler->addImageOutputHandler(windowOutputHandler);
+	if (drawImage) {
+		ImageOutputHandler* windowOutputHandler = new FilteredImageOutputHandler(
+			ImageOutputHandlerFactory().createWindowImageOutputHandler("binary_saliency", 10),
+			ResizeImageFilter::createWithNewRatio(divisionFactor)
+			);
+		outputHandler->addImageOutputHandler(windowOutputHandler);
+	}
 	return outputHandler;
 }

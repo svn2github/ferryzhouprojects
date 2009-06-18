@@ -1,9 +1,16 @@
 #include "IndexRange.h"
 
 #include <iostream>
+#include <cassert>
 
 IndexRange::IndexRange(void)
 {
+}
+
+IndexRange::IndexRange(int startIndex, int endIndex) {
+	assert (startIndex <= endIndex);
+	this->startIndex = startIndex;
+	this->endIndex = endIndex;
 }
 
 IndexRange::~IndexRange(void)

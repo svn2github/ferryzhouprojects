@@ -2,19 +2,19 @@
 <VisualStudioPropertySheet
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="using_fvision"
+	Name="using_cppunit"
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories="$(FVISION)\src"
+		AdditionalIncludeDirectories="$(CPPUNIT)include"
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalDependencies="fvisiond.lib"
-		AdditionalLibraryDirectories="$(FVISION)\lib"
+		AdditionalDependencies="cppunitd.lib"
+		AdditionalLibraryDirectories="$(CPPUNIT)lib"
 	/>
 	<UserMacro
-		Name="FVISION"
-		Value="$(SolutionDir)..\third_party\fvision\"
+		Name="CPPUNIT"
+		Value="$(SolutionDir)..\third_party\cppunit\"
 	/>
 </VisualStudioPropertySheet>

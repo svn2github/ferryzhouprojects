@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="common"
-	ProjectGUID="{47EE311B-9C4C-4768-B23A-57775D1911EF}"
-	RootNamespace="common"
+	Name="test_common"
+	ProjectGUID="{DF113408-6B67-471C-B251-EF363BA9EF8A}"
+	RootNamespace="test_common"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -19,8 +19,8 @@
 			Name="Debug|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="4"
-			InheritedPropertySheets="..\using_opencv.vsprops"
+			ConfigurationType="1"
+			InheritedPropertySheets="..\test\using_test.vsprops;..\using_cppunit.vsprops;..\common\using_common.vsprops"
 			CharacterSet="1"
 			>
 			<Tool
@@ -60,10 +60,17 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				LinkIncremental="2"
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -75,6 +82,12 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -83,7 +96,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops"
+			InheritedPropertySheets="..\test\using_test.vsprops;..\using_cppunit.vsprops;..\common\using_common.vsprops"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -159,83 +172,11 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\Cluster.cpp"
+			RelativePath="..\test\cppunit_test.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\Cluster.h"
-			>
-		</File>
-		<File
-			RelativePath=".\ClusterManager.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\ClusterManager.h"
-			>
-		</File>
-		<File
-			RelativePath=".\EventType.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\EventType.h"
-			>
-		</File>
-		<File
-			RelativePath=".\Feature.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\Feature.h"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexedImageSequenceDescription.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexedImageSequenceDescription.h"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexedImageSequenceReader.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexedImageSequenceReader.h"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexRange.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexRange.h"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexRangeList.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\IndexRangeList.h"
-			>
-		</File>
-		<File
-			RelativePath=".\range_utils.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\range_utils.h"
-			>
-		</File>
-		<File
-			RelativePath=".\SaliencyEvents.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\SaliencyEvents.h"
+			RelativePath=".\Test_range_utils.cpp"
 			>
 		</File>
 	</Files>

@@ -176,6 +176,12 @@ void onUpdateBarIndex() {
 	updateMainWindow();
 }
 
+void onUpdateFrameIndex() {
+	barIndex = frameIndexToBarIndex(curFrameIndex);
+	updateSaliencyBarWindow();
+	updateMainWindow();
+}
+
 //set curIndex
 //update bar image
 //update main window
@@ -184,8 +190,8 @@ void onSaliencyBarMouse(int event, int x, int y, int flags, void* param) {
 		barIndex = x;
 		onUpdateBarIndex();
 	} else if (event == CV_EVENT_RBUTTONDOWN) {
-		barIndex++;
-		onUpdateBarIndex();
+		curFrameIndex++;
+		onUpdateFrameIndex();
 	}
 }
 

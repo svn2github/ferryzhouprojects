@@ -15,6 +15,6 @@
 	/>
 	<UserMacro
 		Name="OPENCV"
-		Value="H:\zj\google code\fvision_modules/third_party/opencv/"
+		Value="$(SolutionDir)..\third_party\opencv\"
 	/>
 </VisualStudioPropertySheet>
