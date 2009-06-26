@@ -35,7 +35,7 @@ Example:\n\
 
 #include <fvision/utils.h>
 
-#include "XGetopt.h"
+#include <XGetopt.h>
 
 #include <string>
 #include <vector>

@@ -3,8 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "background_extraction", "..\background_extraction\background_extraction.vcproj", "{B8B63327-B5E8-4913-821B-CA0453C613CC}"
 	ProjectSection(ProjectDependencies) = postProject
-		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
 		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
+		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "optical_flow_analysis", "..\optical_flow_analysis\optical_flow_analysis.vcproj", "{7C054509-15BC-4255-9BE7-575C898BC60E}"
@@ -22,11 +22,14 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "common", "..\common\common.vcproj", "{47EE311B-9C4C-4768-B23A-57775D1911EF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stationary_foreground_detection", "..\stationary_foreground_detection\stationary_foreground_detection.vcproj", "{D735FAC3-0A72-4D15-86D3-447AF3FA82AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "event_gui_opencv", "..\event_gui_opencv\event_gui_opencv.vcproj", "{559C0B20-ABBB-4E8A-BB67-7DD98DC814C8}"
 	ProjectSection(ProjectDependencies) = postProject
-		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
 		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
+		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "motion_event_detection", "..\motion_event_detection\motion_event_detection.vcproj", "{01DD9BCB-0A61-49B1-BE04-54C8846CAA0B}"
@@ -47,18 +50,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "image_io", "..\image_io\ima
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foreground_extraction", "..\foreground_extraction\foreground_extraction.vcproj", "{940D8F05-77AE-40BC-B43E-5F787AAB08A4}"
 	ProjectSection(ProjectDependencies) = postProject
-		{B7C2C500-781D-4B33-B484-B672321F5EDC} = {B7C2C500-781D-4B33-B484-B672321F5EDC}
-		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
-		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
 		{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31} = {6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}
+		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
+		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
+		{B7C2C500-781D-4B33-B484-B672321F5EDC} = {B7C2C500-781D-4B33-B484-B672321F5EDC}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "image_filter", "..\image_filter\image_filter.vcproj", "{6619D6C6-A0F2-455C-830E-EAA8DDCBCC31}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "precision_evaluation", "..\precision_evaluation\precision_evaluation.vcproj", "{3D1ECF36-1D85-41FA-93DF-3FB602C35F17}"
 	ProjectSection(ProjectDependencies) = postProject
-		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
 		{5683D6D5-8E24-4102-8587-6BBDCC4B5C14} = {5683D6D5-8E24-4102-8587-6BBDCC4B5C14}
+		{47EE311B-9C4C-4768-B23A-57775D1911EF} = {47EE311B-9C4C-4768-B23A-57775D1911EF}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_common", "..\test_common\test_common.vcproj", "{DF113408-6B67-471C-B251-EF363BA9EF8A}"

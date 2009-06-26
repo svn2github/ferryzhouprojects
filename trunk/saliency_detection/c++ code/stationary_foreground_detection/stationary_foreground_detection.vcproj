@@ -20,7 +20,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops;..\using_fvision.vsprops"
+			InheritedPropertySheets="..\using_opencv.vsprops;..\using_fvision.vsprops;..\using_xgetopt.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -96,7 +96,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops;..\using_fvision.vsprops"
+			InheritedPropertySheets="..\using_opencv.vsprops;..\using_fvision.vsprops;..\using_xgetopt.vsprops"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -197,14 +197,6 @@
 		</File>
 		<File
 			RelativePath=".\stationary_foreground_detection.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\XGetopt.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\XGetopt.h"
 			>
 		</File>
 	</Files>
