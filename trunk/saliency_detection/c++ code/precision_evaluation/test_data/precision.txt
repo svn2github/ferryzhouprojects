@@ -1,0 +1,5 @@
+precision: 0.366667
+recall: 0.52381
+ground truth length: 30
+experiment result length21
+overlap: 11
