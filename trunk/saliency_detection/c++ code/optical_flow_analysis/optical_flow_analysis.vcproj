@@ -20,7 +20,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops;..\using_fvision.vsprops;..\common\using_common.vsprops"
+			InheritedPropertySheets="..\using_opencv.vsprops;..\common\using_common.vsprops"
 			CharacterSet="1"
 			>
 			<Tool
@@ -96,7 +96,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\using_opencv.vsprops;..\using_fvision.vsprops;..\common\using_common.vsprops"
+			InheritedPropertySheets="..\using_opencv.vsprops;..\common\using_common.vsprops"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -172,11 +172,31 @@
 	</References>
 	<Files>
 		<File
+			RelativePath=".\NrbfOpticalFlowImageRender.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\NrbfOpticalFlowImageRender.h"
+			>
+		</File>
+		<File
+			RelativePath=".\optical_flow_analysis.cpp"
+			>
+		</File>
+		<File
 			RelativePath=".\OpticalFlowAnalizer.cpp"
 			>
 		</File>
 		<File
 			RelativePath=".\OpticalFlowAnalizer.h"
+			>
+		</File>
+		<File
+			RelativePath=".\OpticalFlowImageRender.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\OpticalFlowImageRender.h"
 			>
 		</File>
 		<File
@@ -201,6 +221,22 @@
 		</File>
 		<File
 			RelativePath=".\OpticalFlowVisualizer.h"
+			>
+		</File>
+		<File
+			RelativePath=".\RbfKernel.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\RbfKernel.h"
+			>
+		</File>
+		<File
+			RelativePath=".\Test_OpticalFlowImageRender.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\Test_OpticalFlowImageRender.h"
 			>
 		</File>
 	</Files>
