@@ -1,0 +1,1 @@
+#include ".\pointsnormalizer.h"
