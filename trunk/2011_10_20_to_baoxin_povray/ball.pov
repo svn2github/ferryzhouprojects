@@ -4,8 +4,8 @@ global_settings {  assumed_gamma 1.0 }
 camera{ ultra_wide_angle
         angle 75
         right x*image_width/image_height
-        location  <0.0 , 1.0 ,-3.0>
-        look_at   <0.0 , 0.0 , 0.0> }
+        location  <0.0 , 1.0 ,-3.0>          // to generate another view, change 0.0 to 0.2 or whatever
+        look_at   <0.0 , 0.0 , 0.0> }        // also change 0.0 to 0.2 in this line if you want parallel principle axes
 //---------------------------------------
 light_source{ <1500,2500,-2500>
               color rgb<1,1,1> }
